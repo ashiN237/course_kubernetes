@@ -19,7 +19,6 @@ services:
       - POSTGRES_DB=app_db
     ports:
       - "8181:8181"
-    platform: linux/amd64
 
   # golang アプリケーション
   app:
@@ -39,4 +38,3 @@ services:
       - ./go:/go/src/app/go/
     # docker-compose run 実行時に実行されるコマンド
     command: go run main.go
-    platform: linux/amd64

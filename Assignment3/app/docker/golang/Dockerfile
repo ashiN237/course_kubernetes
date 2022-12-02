@@ -7,7 +7,10 @@ COPY . .
 # Obtain the package needed to run code. Alternatively use GO Modules. 
 RUN go get -u github.com/lib/pq
 
-# コンテナ作業ディレクトリの変更
 WORKDIR /go/src/yuta/go
-# ホストOSの ./go の中身を作業ディレクトリに追加
+# Add the contents of the host OS . /go contents to the working directory
 ADD ./go .
+
+# Copy go.mod and go.sum files
+COPY go.mod .
+COPY go.sum .

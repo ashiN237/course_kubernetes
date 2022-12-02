@@ -7,3 +7,7 @@ ENV LANG ja_JP.UTF-
 
 # Copy the initialization sql file to the specified directory in the container
 COPY ./docker/postgres/init/*.sql /docker-entrypoint-initdb.d/
+
+# Copy go.mod and go.sum files
+COPY go.mod .
+COPY go.sum .
